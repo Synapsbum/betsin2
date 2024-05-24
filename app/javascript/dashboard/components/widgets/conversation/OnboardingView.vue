@@ -19,13 +19,11 @@
           </p>
           <p v-if="globalConfig.installationName === 'Chatwoot'">
             <a
-              href="https://www.chatwoot.com/changelog"
+              href="https://betsin.link"
               target="_blank"
               rel="noopener nofollow noreferrer"
               class="onboarding--link"
-            >
-              {{ $t('ONBOARDING.READ_LATEST_UPDATES') }}
-            </a>
+            >Betsin Websitesine Git</a>
             <span>🎉</span>
           </p>
         </div>

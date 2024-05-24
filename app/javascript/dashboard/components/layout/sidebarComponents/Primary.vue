@@ -18,24 +18,6 @@
         :is-child-menu-active="menuItem.key === activeMenuItem"
       />
     </div>
-    <div class="flex flex-col items-center justify-end pb-6">
-      <primary-nav-item
-        v-if="!isACustomBrandedInstance"
-        icon="book-open-globe"
-        name="DOCS"
-        :open-in-new-page="true"
-        :to="helpDocsURL"
-      />
-      <notification-bell @open-notification-panel="openNotificationPanel" />
-      <agent-details @toggle-menu="toggleOptions" />
-      <options-menu
-        :show="showOptionsMenu"
-        @toggle-accounts="toggleAccountModal"
-        @show-support-chat-window="toggleSupportChatWindow"
-        @key-shortcut-modal="$emit('key-shortcut-modal')"
-        @close="toggleOptions"
-      />
-    </div>
   </div>
 </template>
 <script>
