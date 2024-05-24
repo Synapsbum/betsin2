@@ -4,14 +4,14 @@
   >
     <section class="max-w-5xl mx-auto">
       <img
-        :src="globalConfig.logo"
-        :alt="globalConfig.installationName"
+        :src="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
+        :alt="Betsin"
         class="block w-auto h-8 mx-auto dark:hidden"
       />
       <img
-        v-if="globalConfig.logoDark"
-        :src="globalConfig.logoDark"
-        :alt="globalConfig.installationName"
+        v-if="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
+        :src="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
+        :alt="Betsin"
         class="hidden w-auto h-8 mx-auto dark:block"
       />
       <h2
