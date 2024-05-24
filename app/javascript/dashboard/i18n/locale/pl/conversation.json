@@ -238,8 +238,8 @@
     }
   },
   "ONBOARDING": {
-    "TITLE": "Cześć 👋, Witamy w %{installationName}!",
-    "DESCRIPTION": "Dziękujemy za rejestrację. Chcemy, abyś jak najlepiej skorzystał z %{installationName}. Oto kilka rzeczy, które możesz spróbować, aby zapewnić sobie jak najlepsze doświadczenie z %{installationName}.",
+    "TITLE": "Cześć 👋, Witamy w Betsin CRM!",
+    "DESCRIPTION": "Dziękujemy za rejestrację. Chcemy, abyś jak najlepiej skorzystał z Betsin CRM. Oto kilka rzeczy, które możesz spróbować, aby zapewnić sobie jak najlepsze doświadczenie z Betsin CRM.",
     "READ_LATEST_UPDATES": "Przeczytaj najnowsze aktualizacje",
     "ALL_CONVERSATION": {
       "TITLE": "Wszystkie Twoje konwersacje w jednym miejscu",

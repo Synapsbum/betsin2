@@ -238,8 +238,8 @@
     }
   },
   "ONBOARDING": {
-    "TITLE": "Merhaba 👋, %{installationName}'a hoş geldiniz!",
-    "DESCRIPTION": "Üyeliğiniz için teşekkür ederiz. %{installationName}'dan en iyi şekilde faydalanmanızı istiyoruz. Deneyimi daha keyifli hale getirmek için %{installationName} içinde yapabileceğiniz birkaç şey var.",
+    "TITLE": "Merhaba 👋, Betsin CRM'a hoş geldiniz!",
+    "DESCRIPTION": "Üyeliğiniz için teşekkür ederiz. Betsin CRM'dan en iyi şekilde faydalanmanızı istiyoruz. Deneyimi daha keyifli hale getirmek için Betsin CRM içinde yapabileceğiniz birkaç şey var.",
     "READ_LATEST_UPDATES": "En Son Güncellemeleri Okuyun",
     "ALL_CONVERSATION": {
       "TITLE": "Tüm Konuşmalarınız Bir Arada",
