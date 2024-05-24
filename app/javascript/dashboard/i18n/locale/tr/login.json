@@ -1,9 +1,9 @@
 {
   "LOGIN": {
-    "TITLE": "Chatwoot'ta oturum açın",
+    "TITLE": "Betsin CRM'de oturum açın",
     "EMAIL": {
       "LABEL": "E-Posta",
-      "PLACEHOLDER": "ornek@firmadi.com",
+      "PLACEHOLDER": "ornek@betsin.com",
       "ERROR": "Lütfen geçerli bir e-posta adresi girin"
     },
     "PASSWORD": {
