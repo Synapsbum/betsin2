@@ -4,22 +4,19 @@
   >
     <section class="max-w-5xl mx-auto">
       <img
-        :src="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
+        :src="https://betsin42.com/img/logos/Logo.svg"
         :alt="Betsin"
         class="block w-auto h-8 mx-auto dark:hidden"
       />
       <img
-        v-if="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
-        :src="https://betsin41.com/img/logos/Logo.svg?v=2024-01-03T16:42:29.803"
+        v-if="https://betsin42.com/img/logos/Logo.svg"
+        :src="https://betsin42.com/img/logos/Logo.svg"
         :alt="Betsin"
         class="hidden w-auto h-8 mx-auto dark:block"
       />
       <h2
         class="mt-6 text-3xl font-medium text-center text-slate-900 dark:text-woot-50"
-      >
-        {{
-          useInstallationName($t('LOGIN.TITLE'), globalConfig.installationName)
-        }}
+      >BEtsin CRM'ye Hosgeldiniz!
       </h2>
       <p
         v-if="showSignupLink"

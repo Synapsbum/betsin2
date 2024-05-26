@@ -13,13 +13,7 @@
       </h1>
       <p
         class="text-sm text-slate-600 dark:text-woot-50 tracking-normal font-normal leading-6 mb-4"
-      >
-        {{
-          useInstallationName(
-            $t('RESET_PASSWORD.DESCRIPTION'),
-            globalConfig.installationName
-          )
-        }}
+      >Şifre sıfırlama talimatlarını almak için Betsin CRM'ye giriş yapmak için kullandığınız e-posta adresini girin.
       </p>
       <div class="space-y-5">
         <form-input
