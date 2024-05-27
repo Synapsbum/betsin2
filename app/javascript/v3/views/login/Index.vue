@@ -62,15 +62,6 @@
             :has-error="$v.credentials.password.$error"
             @input="$v.credentials.password.$touch"
           >
-            <p v-if="!globalConfig.disableUserProfileUpdate">
-              <router-link
-                to="auth/reset/password"
-                class="text-sm text-link"
-                tabindex="4"
-              >
-                {{ $t('LOGIN.FORGOT_PASSWORD') }}
-              </router-link>
-            </p>
           </form-input>
           <submit-button
             :disabled="loginApi.showLoading"

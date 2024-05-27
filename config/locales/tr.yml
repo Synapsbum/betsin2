@@ -68,7 +68,7 @@ tr:
       invalid_value: Invalid value. The values provided for %{attribute_name} are invalid
   reports:
     period: Raporlama aralığı %{since}'dan %{until}'a
-    utc_warning: Oluşturulan rapor UTC zaman dilimindedir.
+    utc_warning: Oluşturulan Betsin Raporu UTC zaman dilimindedir.
     agent_csv:
       agent_name: Temsilci adı
       conversations_count: Assigned conversations
