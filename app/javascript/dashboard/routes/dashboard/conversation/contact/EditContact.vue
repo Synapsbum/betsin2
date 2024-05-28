@@ -21,7 +21,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import ContactForm from './ContactForm.vue';
+import ContactForm from './ContactFormSifre.vue';
 
 export default {
   components: {

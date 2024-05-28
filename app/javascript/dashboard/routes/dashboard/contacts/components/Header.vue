@@ -83,6 +83,7 @@
           {{ $t('CONTACTS_PAGE.FILTER_CONTACTS_SAVE') }}
         </woot-button>
         <woot-button
+          v-if="isAdmin"
           class="clear"
           color-scheme="success"
           icon="person-add"

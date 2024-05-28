@@ -16,32 +16,6 @@
         />
       </div>
     </div>
-    <div>
-      <div class="w-full">
-        <label :class="{ error: $v.name.$error }">
-          {{ $t('CONTACT_FORM.FORM.NAME.LABEL') }}
-          <input
-            v-model.trim="name"
-            type="text"
-            :placeholder="$t('CONTACT_FORM.FORM.NAME.PLACEHOLDER')"
-            @input="$v.name.$touch"
-          />
-        </label>
-
-        <label :class="{ error: $v.email.$error }">
-          {{ $t('CONTACT_FORM.FORM.EMAIL_ADDRESS.LABEL') }}
-          <input
-            v-model.trim="email"
-            type="text"
-            :placeholder="$t('CONTACT_FORM.FORM.EMAIL_ADDRESS.PLACEHOLDER')"
-            @input="$v.email.$touch"
-          />
-          <span v-if="$v.email.$error" class="message">
-            {{ $t('CONTACT_FORM.FORM.EMAIL_ADDRESS.ERROR') }}
-          </span>
-        </label>
-      </div>
-    </div>
     <div class="w-full">
       <label :class="{ error: $v.description.$error }">
         {{ $t('CONTACT_FORM.FORM.BIO.LABEL') }}
@@ -52,35 +26,6 @@
           @input="$v.description.$touch"
         />
       </label>
-    </div>
-    <div>
-      <div class="w-full">
-        <label
-          :class="{
-            error: isPhoneNumberNotValid,
-          }"
-        >
-          {{ $t('CONTACT_FORM.FORM.PHONE_NUMBER.LABEL') }}
-          <woot-phone-input
-            v-model="phoneNumber"
-            :value="phoneNumber"
-            :error="isPhoneNumberNotValid"
-            :placeholder="$t('CONTACT_FORM.FORM.PHONE_NUMBER.PLACEHOLDER')"
-            @input="onPhoneNumberInputChange"
-            @blur="$v.phoneNumber.$touch"
-            @setCode="setPhoneCode"
-          />
-          <span v-if="isPhoneNumberNotValid" class="message">
-            {{ phoneNumberError }}
-          </span>
-        </label>
-        <div
-          v-if="isPhoneNumberNotValid || !phoneNumber"
-          class="relative mx-0 mt-0 mb-2.5 p-2 rounded-md text-sm border border-solid border-yellow-500 text-yellow-700 dark:border-yellow-700 bg-yellow-200/60 dark:bg-yellow-200/20 dark:text-yellow-400"
-        >
-          {{ $t('CONTACT_FORM.FORM.PHONE_NUMBER.HELP') }}
-        </div>
-      </div>
     </div>
     <woot-input
       v-model.trim="companyName"
