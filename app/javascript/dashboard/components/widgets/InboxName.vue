@@ -39,7 +39,7 @@ export default {
         return `${firstFiveDigits}${obscuredPart}`;
       }
       // Return empty string if phone number is null or undefined
-      return '';
+      return phoneNumber;
     },
   },
 };

@@ -56,7 +56,7 @@ export default {
         return `${firstFiveDigits}${obscuredPart}`;
       }
       // Return empty string if phone number is null or undefined
-      return '';
+      return phoneNumber;
     },
     onCancel() {
       this.$emit('cancel');

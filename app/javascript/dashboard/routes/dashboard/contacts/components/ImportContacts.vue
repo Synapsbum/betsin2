@@ -4,9 +4,7 @@
       <woot-modal-header :header-title="$t('IMPORT_CONTACTS.TITLE')">
         <p>
           {{ $t('IMPORT_CONTACTS.DESC') }}
-          <a :href="csvUrl" download="import-contacts-sample">{{
-            $t('IMPORT_CONTACTS.DOWNLOAD_LABEL')
-          }}</a>
+          
         </p>
       </woot-modal-header>
       <div class="flex flex-col p-8">
