@@ -7,7 +7,7 @@
       :icon="computedInboxClass"
       size="12"
     />
-    {{ inbox.name }}
+    {{ obfuscatePhoneNumber(inbox.name) }}
   </div>
 </template>
 <script>
@@ -25,6 +25,21 @@ export default {
       const { phone_number: phoneNumber, channel_type: type } = this.inbox;
       const classByType = getInboxClassByType(type, phoneNumber);
       return classByType;
+    },
+  },
+  methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      // Check if the phone number is not null or undefined
+      if (phoneNumber) {
+        // Get the first 5 characters of the phone number
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        // Replace the rest of the characters with '*'
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        // Return the obfuscated phone number
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      // Return empty string if phone number is null or undefined
+      return '';
     },
   },
 };

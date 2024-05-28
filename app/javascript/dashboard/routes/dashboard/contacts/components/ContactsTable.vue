@@ -97,7 +97,7 @@ export default {
         const { created_at: createdAt } = item;
         return {
           ...item,
-          phone_number: item.phone_number || '---',
+          phone_number: '-Gizli-' || '---',
           company: additional.company_name || '---',
           profiles: additional.social_profiles || {},
           city: additional.city || '---',
@@ -139,7 +139,7 @@ export default {
                       to={`/app/accounts/${this.$route.params.accountId}/contacts/${row.id}`}
                       class="user-name"
                     >
-                      {row.name}
+                      {obfuscatePhoneNumber(row.name)}
                     </router-link>
                   </h6>
                   <button class="button clear small link view-details--button">
@@ -270,6 +270,19 @@ export default {
     this.setSortConfig();
   },
   methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      // Check if the phone number is not null or undefined
+      if (phoneNumber) {
+        // Get the first 5 characters of the phone number
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        // Replace the rest of the characters with '*'
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        // Return the obfuscated phone number
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      // Return empty string if phone number is null or undefined
+      return '';
+    },
     setSortConfig() {
       this.sortConfig = { [this.sortParam]: this.sortOrder };
     },
