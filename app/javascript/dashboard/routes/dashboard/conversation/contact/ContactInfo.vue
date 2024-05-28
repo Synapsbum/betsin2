@@ -6,7 +6,7 @@
           v-if="showAvatar"
           :src="contact.thumbnail"
           size="56px"
-          :username="contact.name"
+          :username="obfuscatePhoneNumber(contact.name)"
           :status="contact.availability_status"
         />
         <woot-button
@@ -22,7 +22,7 @@
           <h3
             class="flex-shrink min-w-0 text-base text-slate-800 dark:text-slate-100 capitalize my-0 max-w-full break-words"
           >
-            {{ contact.name }}
+            {{ obfuscatePhoneNumber(contact.name) }}
           </h3>
           <div class="flex flex-row items-center gap-1">
             <fluent-icon

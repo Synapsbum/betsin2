@@ -15,7 +15,7 @@
       :label="$t('CONTACT_PANEL.PHONE_NUMBER')"
       icon="call"
       emoji=""
-      :value="contact.phone_number"
+      :value="obfuscatePhoneNumber(contact.phone_number)"
       :show-edit="true"
       @update="onPhoneUpdate"
     />
@@ -83,6 +83,19 @@ export default {
     },
   },
   methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      // Check if the phone number is not null or undefined
+      if (phoneNumber) {
+        // Get the first 5 characters of the phone number
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        // Replace the rest of the characters with '*'
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        // Return the obfuscated phone number
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      // Return empty string if phone number is null or undefined
+      return '';
+    },
     onEmailUpdate(value) {
       this.$emit('update', { email: value });
     },

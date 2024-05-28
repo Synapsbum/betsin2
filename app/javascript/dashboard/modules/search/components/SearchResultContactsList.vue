@@ -10,9 +10,9 @@
       <li v-for="contact in contacts" :key="contact.id">
         <search-result-contact-item
           :id="contact.id"
-          :name="contact.name"
+          :name="obfuscatePhoneNumber(contact.name)"
           :email="contact.email"
-          :phone="contact.phone_number"
+          :phone="obfuscatePhoneNumber(contact.phone_number)"
           :account-id="accountId"
           :thumbnail="contact.thumbnail"
         />
@@ -54,6 +54,21 @@ export default {
     ...mapGetters({
       accountId: 'getCurrentAccountId',
     }),
+  },
+  methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      // Check if the phone number is not null or undefined
+      if (phoneNumber) {
+        // Get the first 5 characters of the phone number
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        // Replace the rest of the characters with '*'
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        // Return the obfuscated phone number
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      // Return empty string if phone number is null or undefined
+      return '';
+    },
   },
 };
 </script>
