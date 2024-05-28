@@ -19,7 +19,7 @@
       />
       <slot />
       <span class="text-slate-900 font-medium text-2xl dark:text-slate-100">
-        {{ headerTitle }}
+        {{ obfuscatePhoneNumber(headerTitle) }}
       </span>
     </h1>
     <router-link
@@ -44,6 +44,21 @@ export default {
     BackButton,
   },
   mixins: [adminMixin],
+  methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      // Check if the phone number is not null or undefined
+      if (phoneNumber) {
+        // Get the first 5 characters of the phone number
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        // Replace the rest of the characters with '*'
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        // Return the obfuscated phone number
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      // Return empty string if phone number is null or undefined
+      return phoneNumber;
+    },
+  },
   props: {
     headerTitle: {
       default: '',
