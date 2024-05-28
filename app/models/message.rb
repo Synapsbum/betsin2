@@ -1,42 +1,3 @@
-# == Schema Information
-#
-# Table name: messages
-#
-#  id                        :integer          not null, primary key
-#  additional_attributes     :jsonb
-#  content                   :text
-#  content_attributes        :json
-#  content_type              :integer          default("text"), not null
-#  external_source_ids       :jsonb
-#  message_type              :integer          not null
-#  private                   :boolean          default(FALSE), not null
-#  processed_message_content :text
-#  sender_type               :string
-#  sentiment                 :jsonb
-#  status                    :integer          default("sent")
-#  created_at                :datetime         not null
-#  updated_at                :datetime         not null
-#  account_id                :integer          not null
-#  conversation_id           :integer          not null
-#  inbox_id                  :integer          not null
-#  sender_id                 :bigint
-#  source_id                 :string
-#
-# Indexes
-#
-#  index_messages_on_account_created_type               (account_id,created_at,message_type)
-#  index_messages_on_account_id                         (account_id)
-#  index_messages_on_account_id_and_inbox_id            (account_id,inbox_id)
-#  index_messages_on_additional_attributes_campaign_id  (((additional_attributes -> 'campaign_id'::text))) USING gin
-#  index_messages_on_content                            (content) USING gin
-#  index_messages_on_conversation_account_type_created  (conversation_id,account_id,message_type,created_at)
-#  index_messages_on_conversation_id                    (conversation_id)
-#  index_messages_on_created_at                         (created_at)
-#  index_messages_on_inbox_id                           (inbox_id)
-#  index_messages_on_sender_type_and_sender_id          (sender_type,sender_id)
-#  index_messages_on_source_id                          (source_id)
-#
-
 class Message < ApplicationRecord
   include MessageFilterHelpers
   include Liquidable
@@ -63,6 +24,7 @@ class Message < ApplicationRecord
   before_validation :prevent_message_flooding
   before_save :ensure_processed_message_content
   before_save :ensure_in_reply_to
+  before_save :mask_phone_numbers  # Yeni eklendi
 
   validates :account_id, presence: true
   validates :inbox_id, presence: true
@@ -405,6 +367,12 @@ class Message < ApplicationRecord
     # rubocop:disable Rails/SkipsModelValidations
     conversation.update_columns(last_activity_at: created_at)
     # rubocop:enable Rails/SkipsModelValidations
+  end
+
+  # Yeni eklenen numara maskeleme fonksiyonu
+  def mask_phone_numbers
+    phone_number_regex = /(\+?\d{1,4}|\d{1,4})?([-. \s]?\(?\d{1,4}\)?){1,5}([-. \s]?\d{1,4}){1,5}/
+    self.content = content.gsub(phone_number_regex, '[REDACTED]')
   end
 end
 
