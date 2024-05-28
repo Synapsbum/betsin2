@@ -12,7 +12,7 @@
         <span
           v-dompurify-html="
             $t('MERGE_CONTACTS.SUMMARY.DELETE_WARNING', {
-              primaryContactName,
+              obfuscatePhoneNumber(primaryContactName),
             })
           "
         />
@@ -22,8 +22,8 @@
         <span
           v-dompurify-html="
             $t('MERGE_CONTACTS.SUMMARY.ATTRIBUTE_WARNING', {
-              primaryContactName,
-              parentContactName,
+              obfuscatePhoneNumber(primaryContactName),
+              obfuscatePhoneNumber(parentContactName),
             })
           "
         />
@@ -42,6 +42,16 @@ export default {
     parentContactName: {
       type: String,
       default: '',
+    },
+  },
+  methods: {
+    obfuscatePhoneNumber(phoneNumber) {
+      if (phoneNumber) {
+        const firstFiveDigits = phoneNumber.slice(0, 5);
+        const obscuredPart = phoneNumber.slice(5).replace(/\d/g, '*');
+        return `${firstFiveDigits}${obscuredPart}`;
+      }
+      return phoneNumber;
     },
   },
 };
