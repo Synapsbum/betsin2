@@ -130,7 +130,7 @@ export default {
                 <Thumbnail
                   src={row.thumbnail}
                   size="32px"
-                  username={obfuscatePhoneNumber(row.name)}
+                  username={row.name}
                   status={row.availability_status}
                 />
                 <div class="user-block">
@@ -139,7 +139,7 @@ export default {
                       to={`/app/accounts/${this.$route.params.accountId}/contacts/${row.id}`}
                       class="user-name"
                     >
-                      {obfuscatePhoneNumber(row.name)}
+                      {row.name}
                     </router-link>
                   </h6>
                   <button class="button clear small link view-details--button">
