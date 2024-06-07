@@ -71,24 +71,6 @@
             {{ $t('SIDEBAR_ITEMS.APPEARANCE') }}
           </woot-button>
         </woot-dropdown-item>
-        <woot-dropdown-item v-if="currentUser.type === 'SuperAdmin'">
-          <a
-            href="/super_admin"
-            class="button small clear secondary bg-white dark:bg-slate-800 h-8"
-            target="_blank"
-            rel="noopener nofollow noreferrer"
-            @click="$emit('close')"
-          >
-            <fluent-icon
-              icon="content-settings"
-              size="14"
-              class="icon icon--font"
-            />
-            <span class="button__content">
-              {{ $t('SIDEBAR_ITEMS.SUPER_ADMIN_CONSOLE') }}
-            </span>
-          </a>
-        </woot-dropdown-item>
         <woot-dropdown-item>
           <woot-button
             variant="clear"
