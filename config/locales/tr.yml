@@ -72,28 +72,28 @@ tr:
     agent_csv:
       agent_name: Temsilci adı
       conversations_count: Assigned conversations
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
-      resolution_count: Çözünürlük Sayısı
-      avg_customer_waiting_time: Avg customer waiting time
+      avg_first_response_time: Ortalama Cevap Süresi
+      avg_resolution_time: Ortalama Tamamlama Süresi
+      resolution_count: Tamamlanan Gorüşme Sayisi
+      avg_customer_waiting_time: Ortalama müşteri bekleme süresi
     inbox_csv:
       inbox_name: Inbox adı
       inbox_type: Inbox türü
       conversations_count: Konuşmaların sayısı
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
+      avg_first_response_time: Ortalama Cevap Süresi
+      avg_resolution_time: Ortalama Tamamlama Süresi
     label_csv:
       label_title: Etiket
       conversations_count: Konuşma sayısı
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
+      avg_first_response_time: Ortalama Cevap Süresi
+      avg_resolution_time: Ortalama Tamamlama Süresi
     team_csv:
       team_name: Ekip adı
       conversations_count: Konuşma sayısı
-      avg_first_response_time: Avg first response time
-      avg_resolution_time: Avg resolution time
-      resolution_count: Çözünürlük Sayısı
-      avg_customer_waiting_time: Avg customer waiting time
+      avg_first_response_time: Ortalama Cevap Süresi
+      avg_resolution_time: Ortalama Tamamlama Süresi
+      resolution_count: Tamamlanan Gorüşme Sayisi
+      avg_customer_waiting_time: Ortalama müşteri bekleme süresi
     conversation_traffic_csv:
       timezone: Zaman dilimi
     sla_csv:
@@ -118,15 +118,15 @@ tr:
         recorded_at: Kaydedilen tarih
   notifications:
     notification_title:
-      conversation_creation: "A conversation (#%{display_id}) has been created in %{inbox_name}"
-      conversation_assignment: "A conversation (#%{display_id}) has been assigned to you"
-      assigned_conversation_new_message: "A new message is created in conversation (#%{display_id})"
-      conversation_mention: "You have been mentioned in conversation (#%{display_id})"
+      conversation_creation: "Yeni #%{display_id} numaralı sohbet %{inbox_name} gelen kutusuna eklendi."
+      conversation_assignment: "#%{display_id} numaralı sohbete atandınız!"
+      assigned_conversation_new_message: "#%{display_id} numaralı sohbetten yeni bir mesaj var!"
+      conversation_mention: "#%{display_id} numaralı sohbete etiketlendiniz!"
       sla_missed_first_response: "SLA target first response missed for conversation (#%{display_id})"
       sla_missed_next_response: "SLA target next response missed for conversation (#%{display_id})"
       sla_missed_resolution: "SLA target resolution missed for conversation (#%{display_id})"
-    attachment: "Attachment"
-    no_content: "No content"
+    attachment: "Eklenti"
+    no_content: "ICERIK YOK"
   conversations:
     messages:
       instagram_story_content: "%{story_sender} hikayesinde senden bahsetti: "
@@ -255,14 +255,14 @@ tr:
     button: Görüşmeyi aç
   time_units:
     days:
-      one: "%{count} day"
-      other: "%{count} days"
+      one: "%{count} gün"
+      other: "%{count} güng"
     hours:
-      one: "%{count} hour"
-      other: "%{count} hours"
+      one: "%{count} saat"
+      other: "%{count} saat"
     minutes:
-      one: "%{count} minute"
-      other: "%{count} minutes"
+      one: "%{count} dakika"
+      other: "%{count} dakika"
     seconds:
-      one: "%{count} second"
-      other: "%{count} seconds"
+      one: "%{count} saniye"
+      other: "%{count} saniye"
