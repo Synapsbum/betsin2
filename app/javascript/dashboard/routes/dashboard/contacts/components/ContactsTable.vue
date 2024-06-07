@@ -181,9 +181,11 @@ export default {
           align: this.isRTLView ? 'right' : 'left',
           renderBodyCell: ({ row }) => {
             if (row.phone_number) {
+              const firstFiveDigits = row.phone_number.slice(0, 5);
+              const obscuredPart = row.phone_number.slice(5).replace(/\d/g, '*');
               return (
                 <a>
-                  {` ${row.phone_number}`}
+                  {` ${firstFiveDigits}${obscuredPart}`}
                 </a>
               );
             }
