@@ -97,7 +97,7 @@ export default {
         const { created_at: createdAt } = item;
         return {
           ...item,
-          phone_number: obfuscatePhoneNumber(item.phone_number) || '---',
+          phone_number: item.phone_number || '---',
           company: additional.company_name || '---',
           profiles: additional.social_profiles || {},
           city: additional.city || '---',
