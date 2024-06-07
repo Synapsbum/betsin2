@@ -3,7 +3,7 @@
     "TITLE": "Login to Betsin CRM",
     "EMAIL": {
       "LABEL": "อีเมล์",
-      "PLACEHOLDER": "example@companyname.com",
+      "PLACEHOLDER": "E-Mail Adresi",
       "ERROR": "กรุณากรอกที่อยู่อีเมล์ให้ถูกต้อง"
     },
     "PASSWORD": {

@@ -3,7 +3,7 @@
     "TITLE": "Login to Betsin CRM",
     "EMAIL": {
       "LABEL": "Email",
-      "PLACEHOLDER": "example@companyname.com",
+      "PLACEHOLDER": "E-Mail Adresi",
       "ERROR": "Prosím zadajte platnú e-mailovú adresu"
     },
     "PASSWORD": {
