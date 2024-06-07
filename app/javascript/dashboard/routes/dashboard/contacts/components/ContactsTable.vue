@@ -181,7 +181,11 @@ export default {
           align: this.isRTLView ? 'right' : 'left',
           renderBodyCell: ({ row }) => {
             if (row.phone_number) {
-              return obfuscatePhoneNumber(row.phone_number);
+              return (
+                <a>
+                  {` ${row.phone_number}`}
+                </a>
+              );
             }
             return '---';
           },
