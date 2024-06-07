@@ -18,6 +18,17 @@
         :is-child-menu-active="menuItem.key === activeMenuItem"
       />
     </div>
+    <div class="flex flex-col items-center justify-end pb-6">
+      <notification-bell @open-notification-panel="openNotificationPanel" />
+      <agent-details @toggle-menu="toggleOptions" />
+      <options-menu
+        :show="showOptionsMenu"
+        @toggle-accounts="toggleAccountModal"
+        @show-support-chat-window="toggleSupportChatWindow"
+        @key-shortcut-modal="$emit('key-shortcut-modal')"
+        @close="toggleOptions"
+      />
+    </div>
   </div>
 </template>
 <script>
