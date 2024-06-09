@@ -139,7 +139,7 @@ export default {
                       to={`/app/accounts/${this.$route.params.accountId}/contacts/${row.id}`}
                       class="user-name"
                     >
-                      {row.name}
+                      {{ obfuscatePhoneNumber(row.name) }}
                     </router-link>
                   </h6>
                   <button class="button clear small link view-details--button">

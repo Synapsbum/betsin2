@@ -51,7 +51,7 @@ export default {
     channelList() {
       const { apiChannelName, apiChannelThumbnail } = this.globalConfig;
       return [
-        { key: 'whatsapp', name: 'WhatsApp' },
+        { key: 'api', name: 'WhatsApp' },
         { key: 'telegram', name: 'Telegram' },
       ];
     },
