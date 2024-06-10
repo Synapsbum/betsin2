@@ -73,13 +73,6 @@
             show-copy
           />
           <contact-info-row
-            v-if="contact.identifier"
-            :value="contact.identifier"
-            icon="contact-identify"
-            emoji="🪪"
-            :title="$t('CONTACT_PANEL.IDENTIFIER')"
-          />
-          <contact-info-row
             :value="additionalAttributes.company_name"
             icon="building-bank"
             emoji="🏢"
